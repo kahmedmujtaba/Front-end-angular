@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MakingTableWithEditableDeleteableRowsComponent } from './making-table-with-editable-deleteable-rows/making-table-with-editable-deleteable-rows.component';
+import { EditableTableComponent } from './editable-table/editable-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MakingTableWithEditableDeleteableRowsComponent
+    EditableTableComponent,
   ],
   imports: [
     BrowserModule

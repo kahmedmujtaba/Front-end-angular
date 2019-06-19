@@ -1,0 +1,36 @@
+<h1>{{ name }}<h1>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<table >
+  <tr *ngFor="let user of users">
+    <td [hidden]="editedRecord === user">{{user.name}}</td>
+    <td [hidden]="editedRecord !== user">
+      <input type="text" [value]="user.name"  />
+    </td>
+    <td [hidden]="editedRecord === user">{{user.age}}</td>
+    <td [hidden]="editedRecord !== user">
+      <input type="text" [value]="user.age" />
+    </td>
+    <td [hidden]="editedRecord === user">{{user.email}}</td>
+    <td [hidden]="editedRecord !== user">
+      <input type="text" [value]="user.email" />
+    </td>
+    <td [hidden]="editedRecord === user">{{user.mstatus}}</td>
+    <td [hidden]="editedRecord !== user">
+      <input type="text" [value]="user.mstatus"/>
+    </td>
+    <td [hidden]="editedRecord === user">
+      <button (click)="editRecord(user)"> Edit</button>
+    </td>
+    <td [hidden]="editedRecord !== user">
+      <button (click)="saveRecord(user)"> Save</button>
+    </td>
+    <td [hidden]="editedRecord === user">
+      <button (click)="deleteRecord(user)"> Delete</button>
+    </td>
+    <td [hidden]="editedRecord !== user">
+      <button (click)="cancelEdit(user)"> Cancel</button>
+    </td>
+  </tr>
+<table>
