@@ -2,8 +2,19 @@
 <p>
   Start editing to see some magic happen :)
 </p>
-<table >
-  <tr *ngFor="let user of users">
+<table class="table table-hover" >
+  <tr class="thead-dark">
+      <th>     #    </th>
+      <th>     Name    </th>
+      <th>     Age    </th>
+      <th>     Email    </th>
+      <th>     Marital Status    </th>
+      <th colspan="2" class="text-center">Actions</th>
+
+    
+  </tr>
+  <tr *ngFor="let user of users; let j = index">
+    <td>{{j+1}}</td>
     <td [hidden]="editedRecord === user">{{user.name}}</td>
     <td [hidden]="editedRecord !== user">
       <input type="text" [value]="user.name"  />
