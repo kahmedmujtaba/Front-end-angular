@@ -32,7 +32,9 @@ export class EditableTableComponent implements OnInit {
    this.editedRecord = null;
   }
   deleteRecord(user){
-    this.users.splice(user,1);
+    if (confirm('Are you sure you want to Delete this record?')) {
+      this.users.splice(user,1);
+  }
   }
   cancelEdit(user){
     this.editedRecord = !this.editedRecord;
