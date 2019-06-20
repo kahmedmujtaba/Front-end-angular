@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditableTableComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('About page working');
+  }
 
   ngOnInit() {
   }
@@ -20,11 +22,14 @@ export class EditableTableComponent implements OnInit {
     {name:"foo",age:"56", email:"foo@gmail.com",mstatus:"foo"},
     ];
     editedRecord = null;
+    update={};
+
   editRecord(user){
     this.editedRecord = user;
   }
   saveRecord(user){
-    this.users.splice(user.age,1);
+   // this.users.splice(user.age,1);
+   this.editedRecord = null;
   }
   deleteRecord(user){
     this.users.splice(user,1);

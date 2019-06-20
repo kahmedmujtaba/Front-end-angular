@@ -1,4 +1,4 @@
-<h1>{{ name }}<h1>
+<h1>{{ name }}</h1>
 <p>
   Start editing to see some magic happen :)
 </p>
@@ -10,7 +10,7 @@
     </td>
     <td [hidden]="editedRecord === user">{{user.age}}</td>
     <td [hidden]="editedRecord !== user">
-      <input type="text" [value]="user.age" />
+      <input type="text" [(ngModel)]="user.age"/>
     </td>
     <td [hidden]="editedRecord === user">{{user.email}}</td>
     <td [hidden]="editedRecord !== user">
