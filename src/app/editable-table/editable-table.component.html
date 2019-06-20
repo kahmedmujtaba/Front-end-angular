@@ -25,11 +25,11 @@
     </td>
     <td [hidden]="editedRecord === user">{{user.email}}</td>
     <td [hidden]="editedRecord !== user">
-      <input type="text" [value]="user.email" />
+      <input type="text" [(ngModel)]="user.email" />
     </td>
     <td [hidden]="editedRecord === user">{{user.mstatus}}</td>
     <td [hidden]="editedRecord !== user">
-      <input type="text" [value]="user.mstatus"/>
+      <input type="text" [(ngModel)]="user.mstatus"/>
     </td>
     <td [hidden]="editedRecord === user">
       <button (click)="editRecord(user)"> Edit</button>
