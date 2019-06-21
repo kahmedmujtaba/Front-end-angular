@@ -30,6 +30,10 @@
     <td [hidden]="editedRecord === user">{{user.mstatus}}</td>
     <td [hidden]="editedRecord !== user">
       <input type="text" [(ngModel)]="user.mstatus"/>
+      <!-- <select [(ngModel)]="user.mstatus">
+        <option>{{user.mstatus}}</option>
+        <option *ngFor="let j of user.mstatus">{{j}}</option>
+      </select> -->
     </td>
     <td [hidden]="editedRecord === user">
       <button (click)="editRecord(user)"> Edit</button>
