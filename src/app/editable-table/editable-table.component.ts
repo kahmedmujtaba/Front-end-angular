@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-editable-table',
@@ -6,35 +7,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editable-table.component.css']
 })
 export class EditableTableComponent implements OnInit {
+  //variables
+  name = 'Ahmed';
+  users =[];
+  editedRecord = null;
 
-  constructor() {
-    console.log('About page working');
+  //conctructor and onInit
+  
+  constructor(private userService: UserService) {
+    console.log();
   }
 
   ngOnInit() {
+    this.userService.getUserData( ).subscribe(response => {
+      this.users= response;
+    });
   }
 
-  name = 'Ahmed';
-  users = [
-    {name:"Ahmed",age:"31", email:"kahmedm@gmail.com",mstatus:"married"},
-    {name:"Mujtaba",age:"32", email:"kamujtaba@gmail.com",mstatus:"married"},
-    {name:"Ahmed Mujtaba",age:"31", email:"kahmedmujtaba@gmail.com",mstatus:"married"},
-    {name:"foo",age:"56", email:"foo@gmail.com",mstatus:"foo"},
-    ];
-    editedRecord = null;
-    update={};
-
+  //functions
   editRecord(user){
     this.editedRecord = user;
   }
   saveRecord(user){
-   // this.users.splice(user.age,1);
    this.editedRecord = null;
   }
   deleteRecord(user){
-    if (confirm('Are you sure you want to Delete this record?')) {
+    if (confirm('Are you sure you want to Delete this record?')) { //confirm dialog before delete
       this.users.splice(user,1);
-  }
+    }
   }
   cancelEdit(user){
     this.editedRecord = !this.editedRecord;

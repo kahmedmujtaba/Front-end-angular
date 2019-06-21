@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; //angular forms
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; //bootstrap
-import { AngularFontAwesomeModule } from 'angular-font-awesome'; //fontawesome
 import { AppComponent } from './app.component';
 import { EditableTableComponent } from './editable-table/editable-table.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -23,9 +23,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     NgbModule, //bootstrap after here, it was @imported to style.css
-    AngularFontAwesomeModule, //fontawesome
     RouterModule.forRoot(routes),
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
