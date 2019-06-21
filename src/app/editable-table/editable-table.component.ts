@@ -19,6 +19,7 @@ export class EditableTableComponent implements OnInit {
   }
 
   ngOnInit() {
+    //this.users = this.userService.getUserData(); 
     this.userService.getUserData( ).subscribe(response => {
       this.users= response;
     });
