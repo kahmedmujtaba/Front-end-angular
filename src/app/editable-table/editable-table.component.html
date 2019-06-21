@@ -3,6 +3,7 @@
   Start editing to see some magic happen :)
 </p>
 <table class="table table-hover" >
+
   <tr class="thead-dark">
       <th>     #    </th>
       <th>     Name    </th>
@@ -10,9 +11,8 @@
       <th>     Email    </th>
       <th>     Marital Status    </th>
       <th colspan="2" class="text-center">Actions</th>
-
-    
   </tr>
+
   <tr *ngFor="let user of users; let j = index">
     <td>{{j+1}}</td>
     <td [hidden]="editedRecord === user">{{user.name}}</td>
@@ -42,7 +42,7 @@
       <button (click)="saveRecord(user)"> Save</button>
     </td>
     <td [hidden]="editedRecord === user">
-      <button (click)="deleteRecord(user)"> Delete</button>
+      <button (click)="deleteRecord(j)"> Delete</button>
     </td>
     <td [hidden]="editedRecord !== user">
       <button (click)="cancelEdit(user)"> Cancel</button>
