@@ -1,6 +1,19 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 @import 'base/variables';
 @import 'base/typography';
-@import 'base/animate';
+@import 'base/animations';
 @import 'base/mixins';
-@import 'modules/buttons';
+@import 'base/base.scss';
+
+
+@import 'components/buttons';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/tables';
+@import 'components/popup';
+@import 'components/navigation';
+@import 'components/popup';
+@import 'components/forms';
+
+@import 'pages/editable-table';
